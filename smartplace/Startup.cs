@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using smartplace.Controllers;
 using smartplace.Models;
 
 namespace smartplace
@@ -26,6 +27,11 @@ namespace smartplace
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddMvc().AddRazorPagesOptions(options =>
+            {
+                //...
+            });
 
             var connection = Configuration["ConexaoSqlite:SqliteConnectionString"];
 
@@ -58,7 +64,12 @@ namespace smartplace
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Login}/{action=Index}");
             });
+
+         
         }
     }
 }
