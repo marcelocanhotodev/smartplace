@@ -28,10 +28,14 @@ namespace smartplace.Controllers.Login
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return RedirectToAction("Index","Register");
+
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Menu");
+
             }
             catch (Exception ex)
             {
