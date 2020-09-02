@@ -66,7 +66,7 @@ namespace smartplace
                 endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Index}");
+                    pattern: "{controller=Register}/{action=Index}");
             });
 
          

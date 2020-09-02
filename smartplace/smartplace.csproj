@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Login\Register.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.Extensions" Version="3.1.7" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
@@ -24,8 +28,10 @@
 
   <ItemGroup>
     <Folder Include="Config\Database\" />
-    <Folder Include="Pages\Login\" />
+    <Folder Include="Controllers\Home\" />
     <Folder Include="Repositories\" />
   </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://jenkins-x.io/schemas/jx-schema.json" /></VisualStudio></ProjectExtensions>
 
 </Project>
